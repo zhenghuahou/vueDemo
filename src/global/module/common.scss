@@ -1,0 +1,94 @@
+
+html{
+    font-size: 100px;
+}
+
+*{
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    color: #212121;
+    //font-family: Helvetica Neue, Helvetica, Arial, Sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    min-width: 320px;
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+
+.iconfont {
+    vertical-align: middle;
+    // position: relative;
+    font-size: 16px;
+}
+
+.t-l{
+    text-align: left;
+}
+.t-c{
+    text-align: center;
+}
+.t-r{
+    text-align: right;
+}
+.f-l{
+    float:left;
+}
+.f-r{
+    float:right;
+}
+
+.iwjw-max {
+    width: 640px;
+    margin: auto;
+    border: 1px solid #d3d3d3
+}
+
+//取消select默认样式
+select{
+    appearance:none;
+    border:none;
+    background:none;
+}
+select::-ms-expand { display: none; }
+
+
+/*数字文本框*/
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+/* WebKit browsers */
+::-webkit-input-placeholder { 
+    color:#bdbdbd;
+}
+/* Mozilla Firefox 4 to 18 */
+:-moz-placeholder { 
+    color:#bdbdbd;
+}
+ /* Mozilla Firefox 19+ */
+::-moz-placeholder {
+    color:#bdbdbd;
+}
+
+
+//解决picker ios 遮罩闪的问题
+.qqd-wrap{
+    .scroller-content {
+      z-index: -1;
+    }
+
+    .scroller-mask {
+        z-index:0;
+    }
+}
+
+
+

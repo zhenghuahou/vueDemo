@@ -1,0 +1,59 @@
+/*样式重置*/
+*:not(input){
+    margin: 0;
+    padding:0;
+    -webkit-user-select:none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-touch-callout:none;
+    -webkit-text-size-adjust:none;
+}
+
+input:focus,select:focus,textarea:focus,button:focus{
+    outline: none;
+}
+
+/*reset*/
+body,p,form,input,button,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6{margin:0;padding:0;list-style:none;}
+em, i, cite{font-style:normal;}
+a, ins{text-decoration:none;}
+a{color:#666;}
+img{border:none; max-width:100%;}
+img,input{vertical-align:middle;}
+select{background:none;}
+button, select, input{font-size:14px;}
+table{border-collapse:collapse;}
+h1, h2, h3, h4, h5, h6{font-size:100%;}
+body{-webkit-text-size-adjust:none; min-width:320px; color:#666; background-color:#f7f7f7; font:normal 14px/1.5 arial;min-width:320px;max-width: 750px;margin: 0 auto;}
+.clearfix:after{display:block;content:".";height:0;visibility:hidden;clear:both;font-size:0;line-height:0;}
+
+
+
+.flexbox {
+  display: flex;
+}
+
+.flexbox_center{
+  justify-content: center;
+  align-items: center;
+}
+.flex{
+    flex:1;
+}
+
+.flexbox_column{
+  flex-direction:column;
+}
+
+.border(@name;@color:#e5e5e5) {
+  @{name}:1px solid @color;
+}
+
+
+/*header*/
+header{
+	height: 44px;
+	background: white;
+	color: #000;
+	font-size: 16px;
+	overflow: hidden;
+}

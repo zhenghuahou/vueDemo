@@ -11,7 +11,8 @@ const app = express()
 app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*")
     res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With")
-    res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS")
+    res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+    res.setHeader("Content-Type",`application/json; charset=utf-8`);
     if(req.method == "OPTIONS") {
         res.sendStatus(200) // 让options请求快速返回
     } else {
@@ -25,10 +26,39 @@ app.listen(config.bkdServerPort, function () {
     console.log(`bkd-server at ${chalk.magenta.underline(`http://${ip.address()}:${this.address().port}/`)}`)
 })
 
-// API router
-const apiRouter = express.Router()
-app.use('/api', apiRouter)
+app.get('/random.text', function (req, res) {
+    console.log(' arg:',res.send,' \n res.header---->',res.header)
+  res.send('root');
+});
 
+
+
+// API router
+const apiRouter = express.Router();
+
+//http://expressjs.com/zh-cn/guide/routing.html
+app.use('/api',apiRouter); //这一行加进去，下面 //1处 的apiRouter配置才能生效
+apiRouter.get('/test',function(req,res){ //1
+    res.send(' apiRouter test')
+});
+// app.use('/api', apiRouter)
+/*
+console.log(' apiRouter.get:',apiRouter.get);
+ apiRouter.get: function (path){
+    var route = this.route(path)
+    route[method].apply(route, slice.call(arguments, 1));
+    return this;
+  }
+ */ 
+
+/*
+// console.log(' ########app:',app,'  apiRouter:',apiRouter);
+ ########app: function (req, res, next) {
+    app.handle(req, res, next);
+  }   apiRouter: function router(req, res, next) {
+    router.handle(req, res, next);
+  }
+*/
 // IMG router
 // const imgRouter = express.Router()
 // app.use('/img', imgRouter) // sharp
@@ -55,7 +85,10 @@ const walkDirAndRequire = function (dir, router) {
             } else {
                 db = lowdb() // 基于内存的DB
             }
-            require(`${dir}/index`).default(router, db)
+            // console.log(' walkDirAndRequire:',' ${dir}/index:',`${dir}/index`);
+            console.warn(' 123---->',require(`${dir}/index`).default)
+            // require(`${dir}/index`).default(router, db)
+            require(`${dir}/index`).default(app, db)
         }
     } catch (err) {
         console.log(err)

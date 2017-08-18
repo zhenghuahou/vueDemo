@@ -39,8 +39,8 @@ export default {
 		}
 	},
 	computed: {
-		status() { 
-			let cname ='', txt;
+		status() {
+			let cname = '', txt;
 			const { type, list: { status } } = this
 			switch (status) {
 				case 1:
@@ -52,7 +52,7 @@ export default {
 					txt = '待收货'
 					break
 				case 3:
-					txt='已完成'
+					txt = '已完成'
 					break
 				default:
 					txt = '提交申请'

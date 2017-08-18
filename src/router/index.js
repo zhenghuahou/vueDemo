@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-// import my from '../my/router.js' //我的页面
 import order from '../order/router.js' //我的页面
 
 Vue.use(VueRouter);

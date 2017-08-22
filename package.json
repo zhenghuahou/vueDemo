@@ -5,9 +5,10 @@
   "description": "vueDemo",
   "main": "",
   "scripts": {
-    "dev": "babel-node ./build/task/dev.js & babel-node ./bkd/index.js"
+    "dev": "babel-node ./build/task/dev.js & DEBUG=app babel-node ./bkd/index.js"
   },
   "dependencies": {
+    "debug": "^3.0.0",
     "mint-ui": "^2.1.1",
     "vue": "^2.1.7",
     "vue-resource": "^1.0.3",

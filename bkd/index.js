@@ -1,7 +1,7 @@
 import nodemon from 'nodemon'
 nodemon({
     script: `${__dirname}/app.js`,
-    watch: [`${__dirname}/api`,`${__dirname}/app.js`],
+    watch: [`${__dirname}/api`,`${__dirname}/app.js`,`${__dirname}/*.js`],
     ext: 'js json',
     execMap: {
         'js': 'babel-node --presets=env,stage-0'

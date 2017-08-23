@@ -48,13 +48,10 @@ export default {
 	methods: {
 		getData() {
 			const cb = (res) => {
-				// console.warn(' res:',res);
-				if (res.status === 1) {
-					this.orderLists = res.orderLists;
-				}
+				this.orderLists = res.orderLists;
 			}
 			let data = {
-				orderId: 3012,
+				orderId: 3012
 			}
 			//发送数据请求
 			Api('getOrderList')(data)(cb);

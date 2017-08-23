@@ -20,42 +20,8 @@
         "logisticsDate":"08-29",
         "logisticsInfo":"【上海市】您的订单在京东【苏州接货仓】分拣完成",
         "orderTime": "2017-08-29"
-      },
-       {
-        "endTime": "2018/8/18,20:20:12",
-        "status":2,
-        "title":"一号店自营",
-        "linkUrl":"https://github.com/",          
-        "statusText":"待收货",
-        "descri":"【京东配送】酷奇 笔记本电脑支架 散热器 底座读书架懒人支架桌面架 散热托架 黑色【升级版 底座360度旋转】",
-        "price":"123456.7",
-        "num":"5",
-        "productLists":[
-          {
-            "imgUrl":"https://avatars2.githubusercontent.com/u/3623485?v=4&s=40"
-        }],
-        "logisticsTime":"",
-        "logisticsDate":"",
-        "logisticsInfo":"",
-        "orderTime": "2017-08-29"
-      },
-       {
-        "endTime": "2018/8/18,20:20:12",
-        "status":3,
-        "title":"jd自营",
-        "linkUrl":"https://github.com/",          
-        "descri":"【京东配送】酷奇 笔记本电脑支架 散热器 底座读书架懒人支架桌面架 散热托架 黑色【升级版 底座360度旋转】",
-        "price":"123456.7",
-        "num":"5",
-        "productLists":[
-          {
-            "imgUrl":"https://avatars2.githubusercontent.com/u/3623485?v=4&s=40"
-        }],
-        "logisticsTime":"",
-        "logisticsDate":"",
-        "logisticsInfo":"",
-        "orderTime": "2017-08-29"
       }
+      
     ],
     "status":118
   }

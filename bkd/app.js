@@ -9,10 +9,10 @@ import config from '../config'
 const app = express()
 
 app.all('*', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*")
-    res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With")
-    res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
-    res.setHeader("Content-Type",`application/json; charset=utf-8`);
+    // res.header("Access-Control-Allow-Origin", "*")
+    // res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With")
+    // res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+    // res.setHeader("Content-Type",`application/json; charset=utf-8`);
     if(req.method == "OPTIONS") {
         res.sendStatus(200) // 让options请求快速返回
     } else {
@@ -38,10 +38,10 @@ const apiRouter = express.Router();
 
 //http://expressjs.com/zh-cn/guide/routing.html
 app.use('/api',apiRouter); //这一行加进去，下面 //1处 的apiRouter配置才能生效
-apiRouter.get('/test',function(req,res){ //1
-    res.send(' apiRouter test')
-});
-// app.use('/api', apiRouter)
+// apiRouter.get('/test',function(req,res){ //1
+//     res.send(' apiRouter test')
+// });
+app.use('/api', apiRouter)
 /*
 console.log(' apiRouter.get:',apiRouter.get);
  apiRouter.get: function (path){
@@ -86,9 +86,8 @@ const walkDirAndRequire = function (dir, router) {
                 db = lowdb() // 基于内存的DB
             }
             // console.log(' walkDirAndRequire:',' ${dir}/index:',`${dir}/index`);
-            console.warn(' 123---->',require(`${dir}/index`).default)
             // require(`${dir}/index`).default(router, db)
-            require(`${dir}/index`).default(app, db)
+            require(`${dir}/index`).default(apiRouter, db)
         }
     } catch (err) {
         console.log(err)
